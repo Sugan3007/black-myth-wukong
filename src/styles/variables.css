@@ -1,0 +1,30 @@
+:root {
+  --navbar-height: 68px;
+
+  --color-background: #050505;
+  --color-surface: #11100e;
+
+  --color-white: #ffffff;
+  --color-text: #e8e4dc;
+  --color-muted: #a59f94;
+
+  --color-gold: #cfa454;
+  --color-gold-light: #efd284;
+  --color-red: #9d1b14;
+
+  --font-display:
+    "Crimson Pro",
+    "Times New Roman",
+    serif;
+
+  --font-body:
+    "Crimson Pro",
+    "Times New Roman",
+    serif;
+}
+
+@media (max-width: 950px) {
+  :root {
+    --navbar-height: 62px;
+  }
+}

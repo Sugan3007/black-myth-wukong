@@ -1,0 +1,522 @@
+.ingredients-page {
+  min-height: 100vh;
+  overflow-x: clip;
+  color: #f3e6d1;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(131, 70, 35, 0.14), transparent 32rem),
+    radial-gradient(circle at 8% 42%, rgba(164, 106, 50, 0.07), transparent 30rem),
+    radial-gradient(circle at 92% 88%, rgba(117, 63, 30, 0.08), transparent 32rem),
+    #080705;
+}
+
+.ingredients-page *,
+.ingredients-page *::before,
+.ingredients-page *::after { box-sizing: border-box; }
+
+.ingredients-page__hero {
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 8rem max(1rem, calc((100% - 1380px) / 2)) 4.6rem;
+  overflow: hidden;
+  isolation: isolate;
+  background: #080604;
+}
+
+.ingredients-page__hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -6;
+  background: url("/images/items/ingredients/nine-capped-lingzhi.png") center 40% / cover no-repeat;
+  filter: saturate(0.76) contrast(1.08) brightness(0.62);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.ingredients-page__hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  background:
+    linear-gradient(180deg, rgba(4, 3, 2, 0.18), rgba(7, 5, 3, 0.56) 48%, rgba(7, 5, 3, 0.98)),
+    linear-gradient(90deg, rgba(5, 4, 3, 0.96), rgba(5, 4, 3, 0.42) 54%, rgba(5, 4, 3, 0.18) 74%, rgba(5, 4, 3, 0.62));
+  pointer-events: none;
+}
+
+.ingredients-page__hero-glow {
+  position: absolute;
+  right: 6%;
+  bottom: -13rem;
+  z-index: -4;
+  width: 38rem;
+  height: 38rem;
+  border-radius: 50%;
+  background: rgba(188, 105, 47, 0.16);
+  filter: blur(115px);
+  pointer-events: none;
+}
+
+.ingredients-page__hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  opacity: 0.045;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
+}
+
+.ingredients-page__hero-content { position: relative; z-index: 2; max-width: 790px; }
+
+.ingredients-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+  color: #d29a58;
+  font-size: 0.75rem;
+  letter-spacing: 0.11rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.ingredients-page__back span { transition: transform 0.22s ease; }
+.ingredients-page__back:hover { color: #efc786; transform: translateX(-2px); }
+.ingredients-page__back:hover span { transform: translateX(-4px); }
+
+.ingredients-page__hero-content > span,
+.ingredients-page__intro > span {
+  display: block;
+  color: #c58b4d;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+.ingredients-page__hero h1 {
+  margin: 0.7rem 0 1rem;
+  color: #fff7e9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 9vw, 7.8rem);
+  font-weight: 500;
+  line-height: 0.9;
+  text-shadow: 0 18px 42px rgba(0, 0, 0, 0.58);
+}
+
+.ingredients-page__hero p {
+  max-width: 690px;
+  margin: 0;
+  color: rgba(236, 219, 194, 0.68);
+  font-size: clamp(0.96rem, 1.1vw, 1.1rem);
+  line-height: 1.85;
+}
+
+.ingredients-page__hero-decoration,
+.ingredient-modal__decoration {
+  width: min(320px, 78vw);
+  margin-top: 1.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.ingredients-page__hero-decoration span,
+.ingredient-modal__decoration i {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, rgba(214, 156, 82, 0.76), transparent);
+}
+
+.ingredients-page__hero-decoration span:last-child,
+.ingredient-modal__decoration i:last-child {
+  background: linear-gradient(to left, rgba(214, 156, 82, 0.76), transparent);
+}
+
+.ingredients-page__hero-decoration i,
+.ingredient-modal__decoration b {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border: 1px solid rgba(237, 193, 124, 0.82);
+  transform: rotate(45deg);
+}
+
+.ingredients-page__content {
+  width: min(1380px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 5.5rem 0 8rem;
+}
+
+.ingredients-page__intro {
+  max-width: 730px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.ingredients-page__intro h2 {
+  margin: 0.8rem 0 1rem;
+  color: #f7ead5;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ingredients-page__intro p {
+  margin: 0;
+  color: rgba(226, 207, 178, 0.52);
+  line-height: 1.75;
+}
+
+.ingredients-page__toolbar { display: flex; gap: 1rem; }
+.ingredients-page__search { position: relative; flex: 1; }
+
+.ingredients-page__search-icon {
+  position: absolute;
+  top: 50%;
+  left: 1.1rem;
+  width: 1rem;
+  height: 1rem;
+  color: rgba(214, 168, 105, 0.55);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.ingredients-page__search-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.ingredients-page__search input {
+  width: 100%;
+  height: 3.7rem;
+  padding: 0 3rem;
+  color: #f1dfc4;
+  font: inherit;
+  border: 1px solid rgba(203, 146, 71, 0.2);
+  outline: none;
+  background: rgba(14, 11, 8, 0.9);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ingredients-page__search input::placeholder { color: rgba(226, 207, 178, 0.35); }
+.ingredients-page__search input:focus {
+  border-color: rgba(214, 156, 82, 0.58);
+  background: rgba(17, 13, 9, 0.96);
+  box-shadow: 0 0 0 3px rgba(214, 156, 82, 0.06);
+}
+
+.ingredients-page__search button {
+  position: absolute;
+  top: 50%;
+  right: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: #d1a164;
+  font-size: 1.4rem;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  transform: translateY(-50%);
+}
+
+.ingredients-page__toolbar-right { display: flex; align-items: center; gap: 0.8rem; }
+
+.ingredients-page__reset {
+  min-height: 3rem;
+  padding: 0 1.15rem;
+  border: 1px solid rgba(218, 177, 102, 0.28);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(218, 177, 102, 0.1), rgba(218, 177, 102, 0.03));
+  color: rgba(244, 226, 191, 0.88);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.ingredients-page__count {
+  min-width: 145px;
+  min-height: 3.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  overflow: hidden;
+  border: 1px solid rgba(203, 146, 71, 0.2);
+  background: rgba(14, 11, 8, 0.9);
+}
+
+.ingredients-page__count strong { color: #e4b978; font-size: 1.3rem; }
+.ingredients-page__count span { color: rgba(229, 212, 186, 0.48); font-size: 0.7rem; text-transform: uppercase; }
+
+.ingredients-page__filter-section { display: grid; gap: 0.8rem; margin: 1.5rem 0 3rem; }
+.ingredients-page__filter-heading { color: rgba(229, 212, 186, 0.45); font-size: 0.67rem; font-weight: 700; letter-spacing: 0.15rem; text-transform: uppercase; }
+.ingredients-page__filters { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+
+.ingredients-page__filters button {
+  position: relative;
+  min-height: 2.7rem;
+  padding: 0.65rem 1.1rem;
+  overflow: hidden;
+  color: rgba(235, 219, 194, 0.58);
+  font: inherit;
+  font-size: 0.73rem;
+  border: 1px solid rgba(204, 147, 72, 0.16);
+  cursor: pointer;
+  background: rgba(15, 12, 8, 0.84);
+  isolation: isolate;
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ingredients-page__filters button:hover { color: #e7c490; border-color: rgba(216, 154, 77, 0.42); }
+.ingredients-page__filters button.active { color: #180f07; border-color: #d89a4d; }
+.ingredients-page__filter-active { position: absolute; inset: 0; z-index: -1; background: linear-gradient(135deg, #edc17c, #b96e2d); }
+.ingredients-page__filter-label { position: relative; z-index: 1; }
+
+.ingredients-page__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.35rem;
+}
+
+.ingredients-page__card-motion { min-width: 0; }
+
+.ingredient-card {
+  position: relative;
+  width: 100%;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  color: inherit;
+  border: 1px solid rgba(203, 146, 71, 0.18);
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(17, 13, 9, 0.98), rgba(10, 8, 6, 0.98));
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.25);
+  isolation: isolate;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ingredient-card:hover {
+  border-color: rgba(222, 166, 92, 0.5);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42), 0 0 35px rgba(177, 100, 42, 0.07);
+}
+
+.ingredient-card__visual {
+  position: relative;
+  min-height: 270px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(173, 102, 46, 0.16), transparent 45%),
+    linear-gradient(180deg, #17110c, #0d0a07);
+}
+
+.ingredient-card__visual::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  left: 1rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(224, 171, 100, 0.35), transparent);
+}
+
+.ingredient-card__halo {
+  position: absolute;
+  width: 13rem;
+  height: 13rem;
+  border: 1px solid rgba(213, 155, 80, 0.1);
+  border-radius: 50%;
+  box-shadow: inset 0 0 45px rgba(182, 104, 43, 0.08), 0 0 45px rgba(182, 104, 43, 0.05);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.ingredient-card:hover .ingredient-card__halo { transform: scale(1.08) rotate(8deg); border-color: rgba(213, 155, 80, 0.22); }
+
+.ingredient-card img {
+  position: relative;
+  z-index: 2;
+  width: min(75%, 220px);
+  height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 22px rgba(0, 0, 0, 0.56));
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.ingredient-card:hover img { transform: translateY(-7px) scale(1.055); filter: drop-shadow(0 28px 28px rgba(0, 0, 0, 0.64)); }
+
+.ingredient-card__symbol {
+  position: absolute;
+  right: 0.7rem;
+  bottom: -1.2rem;
+  color: rgba(237, 194, 127, 0.055);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 7.5rem;
+  line-height: 1;
+}
+
+.ingredient-card__body { display: flex; flex: 1; flex-direction: column; padding: 1.35rem 1.4rem 1.45rem; }
+.ingredient-card__type { margin-bottom: 0.6rem; color: #c98a47; font-size: 0.61rem; font-weight: 700; letter-spacing: 0.12rem; text-transform: uppercase; }
+.ingredient-card strong { color: #f7e6ca; font-family: Georgia, "Times New Roman", serif; font-size: 1.45rem; font-weight: 500; line-height: 1.18; }
+.ingredient-card__line { width: 68px; height: 1px; margin: 1rem 0; background: linear-gradient(90deg, rgba(216, 157, 82, 0.76), transparent); }
+.ingredient-card__action { margin-top: auto; display: flex; align-items: center; justify-content: space-between; color: rgba(225, 198, 158, 0.5); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.09rem; text-transform: uppercase; }
+.ingredient-card__action i { color: #d9a05a; font-style: normal; font-size: 1.05rem; transition: transform 0.25s ease; }
+.ingredient-card:hover .ingredient-card__action i { transform: translateX(5px); }
+.ingredient-card__border { position: absolute; inset: 7px; pointer-events: none; border: 1px solid rgba(238, 191, 124, 0.035); }
+
+.ingredients-page__empty { padding: 5.5rem 1rem; text-align: center; border: 1px solid rgba(205, 149, 76, 0.14); background: radial-gradient(circle at center, rgba(154, 89, 41, 0.09), transparent 18rem), rgba(13, 10, 7, 0.5); }
+.ingredients-page__empty > span { display: block; margin-bottom: 0.8rem; color: rgba(206, 164, 93, 0.15); font-family: Georgia, "Times New Roman", serif; font-size: 5rem; line-height: 1; }
+.ingredients-page__empty h2 { margin: 0 0 0.7rem; color: #ead3ad; font-family: Georgia, "Times New Roman", serif; font-size: 2rem; font-weight: 500; }
+.ingredients-page__empty p { margin: 0 0 1.5rem; color: rgba(226, 208, 180, 0.5); }
+.ingredients-page__empty button { min-height: 2.8rem; padding: 0.7rem 1.3rem; color: #180f07; font: inherit; font-size: 0.73rem; font-weight: 700; border: 1px solid #d89a4d; cursor: pointer; background: linear-gradient(135deg, #edc17c, #b96e2d); }
+
+.ingredient-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  overflow-y: auto;
+  background: rgba(3, 2, 1, 0.86);
+  backdrop-filter: blur(14px);
+}
+
+.ingredient-modal__panel {
+  position: relative;
+  width: min(1000px, 100%);
+  max-height: calc(100vh - 2rem);
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+  overflow: auto;
+  border: 1px solid rgba(220, 160, 82, 0.3);
+  background: #0d0a07;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.72);
+}
+
+.ingredient-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 5;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  color: #e2b879;
+  font-size: 1.55rem;
+  border: 1px solid rgba(220, 160, 82, 0.24);
+  cursor: pointer;
+  background: rgba(9, 7, 5, 0.82);
+}
+
+.ingredient-modal__image-wrap {
+  position: relative;
+  min-height: 570px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(173, 102, 46, 0.2), transparent 48%), linear-gradient(160deg, #18110c, #090705);
+}
+
+.ingredient-modal__glow { position: absolute; width: 22rem; height: 22rem; border-radius: 50%; border: 1px solid rgba(220, 164, 91, 0.15); box-shadow: inset 0 0 80px rgba(184, 104, 42, 0.08), 0 0 70px rgba(184, 104, 42, 0.09); }
+.ingredient-modal__image-wrap img { position: relative; z-index: 2; width: min(74%, 330px); height: 390px; object-fit: contain; filter: drop-shadow(0 35px 35px rgba(0, 0, 0, 0.62)); }
+.ingredient-modal__symbol { position: absolute; right: -1rem; bottom: -3rem; color: rgba(237, 194, 127, 0.055); font-family: Georgia, "Times New Roman", serif; font-size: 14rem; line-height: 1; }
+.ingredient-modal__content { padding: 5rem 3.4rem 3.4rem; }
+.ingredient-modal__content > span { color: #c78948; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18rem; text-transform: uppercase; }
+.ingredient-modal__content h2 { margin: 0.8rem 0 0; color: #fff0d8; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.5rem, 5vw, 4.6rem); font-weight: 500; line-height: 0.98; }
+.ingredient-modal__decoration { width: 210px; margin: 1.45rem 0; }
+.ingredient-modal__content p { margin: 0; color: rgba(229, 210, 182, 0.62); font-size: 1rem; line-height: 1.85; }
+.ingredient-modal__content dl { margin: 2.3rem 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(215, 158, 82, 0.16); border-bottom: 1px solid rgba(215, 158, 82, 0.16); }
+.ingredient-modal__content dl > div { padding: 1.25rem 1rem 1.25rem 0; }
+.ingredient-modal__content dl > div + div { padding-left: 1.25rem; border-left: 1px solid rgba(215, 158, 82, 0.16); }
+.ingredient-modal__content dt { margin-bottom: 0.35rem; color: rgba(224, 200, 166, 0.4); font-size: 0.62rem; letter-spacing: 0.11rem; text-transform: uppercase; }
+.ingredient-modal__content dd { margin: 0; color: #e3bd84; font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; }
+
+@media (max-width: 1150px) { .ingredients-page__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 850px) {
+  .ingredients-page__grid { grid-template-columns: repeat(2, 1fr); }
+  .ingredient-modal__panel { grid-template-columns: 1fr; }
+  .ingredient-modal__image-wrap { min-height: 390px; }
+  .ingredient-modal__image-wrap img { height: 300px; }
+}
+
+@media (max-width: 680px) {
+  .ingredients-page__hero { min-height: 68vh; padding: 7rem 1rem 3.5rem; }
+  .ingredients-page__content { width: calc(100% - 1rem); padding: 4rem 0 5rem; }
+  .ingredients-page__toolbar { flex-direction: column; }
+  .ingredients-page__toolbar-right { justify-content: space-between; }
+  .ingredients-page__filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.5rem; }
+  .ingredients-page__filters button { flex: 0 0 auto; }
+  .ingredient-modal__content { padding: 3.8rem 1.4rem 2rem; }
+}
+
+@media (max-width: 540px) {
+  .ingredients-page__grid { grid-template-columns: 1fr; }
+  .ingredient-card { min-height: 400px; }
+  .ingredient-card__visual { min-height: 250px; }
+  .ingredient-modal { padding: 0; }
+  .ingredient-modal__panel { min-height: 100vh; max-height: none; border: 0; }
+  .ingredient-modal__image-wrap { min-height: 340px; }
+  .ingredient-modal__content dl { grid-template-columns: 1fr; }
+  .ingredient-modal__content dl > div + div { padding-left: 0; border-top: 1px solid rgba(215, 158, 82, 0.16); border-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ingredients-page *,
+  .ingredients-page *::before,
+  .ingredients-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* Ingredients page botanical refinements */
+.ingredients-page {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(95, 118, 54, 0.12), transparent 32rem),
+    radial-gradient(circle at 8% 42%, rgba(124, 102, 48, 0.07), transparent 30rem),
+    radial-gradient(circle at 92% 88%, rgba(77, 108, 58, 0.08), transparent 32rem),
+    #080705;
+}
+
+.ingredients-page__hero-image {
+  background:
+    linear-gradient(rgba(8, 6, 4, 0.24), rgba(8, 6, 4, 0.24)),
+    url("/images/items/ingredients/nine-capped-lingzhi.png")
+    center 38% / cover no-repeat;
+}
+
+.ingredients-page__hero-glow {
+  background: rgba(126, 142, 67, 0.15);
+}
+
+.ingredient-card__visual {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(110, 126, 63, 0.15), transparent 45%),
+    linear-gradient(180deg, #15150d, #0d0a07);
+}
+
+.ingredient-modal__image-wrap {
+  background:
+    radial-gradient(circle at center, rgba(110, 126, 63, 0.2), transparent 48%),
+    linear-gradient(160deg, #17170f, #090705);
+}

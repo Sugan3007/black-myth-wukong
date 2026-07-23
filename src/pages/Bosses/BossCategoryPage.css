@@ -1,0 +1,168 @@
+.boss-category-page {
+  min-height: 100vh;
+
+  color: #f3e6d1;
+
+  background: #080604;
+}
+
+.boss-category-page__hero {
+  position: relative;
+
+  min-height: 72vh;
+
+  display: flex;
+  align-items: flex-end;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  padding:
+    8rem
+    max(1rem, calc((100% - 1380px) / 2))
+    5rem;
+}
+
+.boss-category-page__background {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background-position: center;
+  background-size: cover;
+
+  transform-origin: center;
+}
+
+.boss-category-page__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 4, 3, 0.16),
+      rgba(7, 5, 3, 0.92)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 4, 3, 0.92),
+      rgba(5, 4, 3, 0.22)
+    );
+}
+
+.boss-category-page__content {
+  position: relative;
+  z-index: 1;
+
+  max-width: 760px;
+}
+
+.boss-category-page__back {
+  display: inline-block;
+
+  margin-bottom: 2rem;
+
+  color: #d39b59;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.11rem;
+
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.boss-category-page__content > span {
+  display: block;
+
+  color: #c68b4b;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24rem;
+
+  text-transform: uppercase;
+}
+
+.boss-category-page__content h1 {
+  margin: 12px 0;
+
+  color: #fff5e6;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(4rem, 10vw, 7.5rem);
+
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+.boss-category-page__content p {
+  max-width: 620px;
+
+  color:
+    rgba(235, 216, 188, 0.6);
+
+  line-height: 1.8;
+}
+
+.boss-category-page__placeholder {
+  min-height: 45vh;
+
+  display: grid;
+  place-items: center;
+
+  padding: 6rem 1rem;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(145, 76, 28, 0.12),
+      transparent 28rem
+    ),
+    #080604;
+}
+
+.boss-category-page__placeholder > div {
+  max-width: 650px;
+}
+
+.boss-category-page__placeholder span {
+  color: #c68b4b;
+
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.22rem;
+
+  text-transform: uppercase;
+}
+
+.boss-category-page__placeholder h2 {
+  margin: 13px 0;
+
+  color: #f4dfbd;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(2rem, 5vw, 3.4rem);
+
+  font-weight: 500;
+}
+
+.boss-category-page__placeholder p {
+  color:
+    rgba(230, 211, 183, 0.52);
+
+  line-height: 1.75;
+}

@@ -1,0 +1,564 @@
+.curios-page {
+  min-height: 100vh;
+  overflow-x: clip;
+
+  color: #f3e6d1;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(150, 77, 27, 0.13),
+      transparent 32rem
+    ),
+    #080705;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.curios-page__hero {
+  position: relative;
+
+  min-height: 52vh;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding:
+    8rem
+    max(1rem, calc((100% - 1380px) / 2))
+    4rem;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: #080604;
+
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.curios-page__hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -4;
+
+  background:
+    url("/images/equipment/curios-card.png")
+    center / cover
+    no-repeat;
+
+  transform-origin: center;
+  will-change: transform;
+}
+
+.curios-page__hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 3, 2, 0.18),
+      rgba(7, 5, 3, 0.94)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 4, 3, 0.9),
+      rgba(5, 4, 3, 0.2) 68%,
+      rgba(5, 4, 3, 0.46)
+    );
+
+  pointer-events: none;
+}
+
+.curios-page__hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 750px;
+}
+
+.curios-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  margin-bottom: 2rem;
+
+  color: #d29a58;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.11rem;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.curios-page__back span {
+  transition: transform 0.22s ease;
+}
+
+.curios-page__back:hover {
+  color: #efc786;
+  transform: translateX(-2px);
+}
+
+.curios-page__back:hover span {
+  transform: translateX(-4px);
+}
+
+.curios-page__hero-content > span {
+  display: block;
+
+  color: #c58b4d;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+.curios-page__hero h1 {
+  margin: 0.7rem 0;
+
+  color: #fff7e9;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(
+    4rem,
+    9vw,
+    7.5rem
+  );
+
+  font-weight: 500;
+  line-height: 0.9;
+
+  text-shadow:
+    0 18px 42px
+    rgba(0, 0, 0, 0.58);
+}
+
+.curios-page__hero p {
+  max-width: 620px;
+  margin-bottom: 0;
+
+  color:
+    rgba(236, 219, 194, 0.66);
+
+  line-height: 1.8;
+}
+
+.curios-page__hero-decoration {
+  width: min(320px, 78vw);
+  margin-top: 1.65rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.curios-page__hero-decoration span {
+  height: 1px;
+  flex: 1;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(214, 156, 82, 0.76),
+      transparent
+    );
+}
+
+.curios-page__hero-decoration span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      rgba(214, 156, 82, 0.76),
+      transparent
+    );
+}
+
+.curios-page__hero-decoration i {
+  width: 6px;
+  height: 6px;
+
+  border:
+    1px solid
+    rgba(237, 193, 124, 0.82);
+
+  transform: rotate(45deg);
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.curios-page__content {
+  width:
+    min(
+      1380px,
+      calc(100% - 2rem)
+    );
+
+  margin: 0 auto;
+  padding: 4rem 0 7rem;
+}
+
+.curios-page__controls {
+  will-change: opacity, transform;
+}
+
+.curios-page__toolbar {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.curios-page__search {
+  position: relative;
+  flex: 1;
+}
+
+.curios-page__search input {
+  width: 100%;
+  height: 3.7rem;
+
+  padding:
+    0
+    3rem
+    0
+    1.2rem;
+
+  color: #f1dfc4;
+
+  font: inherit;
+
+  border:
+    1px solid
+    rgba(203, 146, 71, 0.2);
+
+  outline: none;
+
+  background:
+    rgba(14, 11, 8, 0.9);
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.curios-page__search input::placeholder {
+  color:
+    rgba(226, 207, 178, 0.35);
+}
+
+.curios-page__search input:focus {
+  border-color:
+    rgba(214, 156, 82, 0.58);
+
+  background:
+    rgba(17, 13, 9, 0.96);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(214, 156, 82, 0.06);
+}
+
+.curios-page__search button {
+  position: absolute;
+  top: 50%;
+  right: 0.85rem;
+
+  width: 2rem;
+  height: 2rem;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  color: #d1a164;
+
+  font-size: 1.4rem;
+
+  border: 0;
+  cursor: pointer;
+
+  background: transparent;
+
+  transform: translateY(-50%);
+}
+
+/* ========================================
+   ITEM COUNT
+======================================== */
+
+.curios-page__count {
+  min-width: 135px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(203, 146, 71, 0.2);
+
+  background:
+    rgba(14, 11, 8, 0.9);
+}
+
+.curios-page__count strong {
+  color: #e4b978;
+  font-size: 1.3rem;
+}
+
+.curios-page__count span {
+  color:
+    rgba(229, 212, 186, 0.48);
+
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   FILTERS
+======================================== */
+
+.curios-page__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+
+  margin:
+    1.5rem
+    0
+    2.5rem;
+}
+
+.curios-page__filters button {
+  position: relative;
+
+  min-height: 2.7rem;
+
+  padding:
+    0.65rem
+    1.1rem;
+
+  overflow: hidden;
+
+  color:
+    rgba(235, 219, 194, 0.58);
+
+  font: inherit;
+  font-size: 0.73rem;
+
+  border:
+    1px solid
+    rgba(204, 147, 72, 0.16);
+
+  cursor: pointer;
+
+  background:
+    rgba(15, 12, 8, 0.84);
+
+  isolation: isolate;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.curios-page__filters button:hover {
+  color: #e7c490;
+
+  border-color:
+    rgba(216, 154, 77, 0.42);
+}
+
+.curios-page__filters button.active {
+  color: #180f07;
+  border-color: #d89a4d;
+}
+
+.curios-page__filter-active {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edc17c,
+      #b96e2d
+    );
+}
+
+.curios-page__filter-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   GRID
+======================================== */
+
+.curios-page__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 1.4rem;
+}
+
+.curios-page__card-motion {
+  min-width: 0;
+
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  will-change:
+    opacity,
+    transform;
+}
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.curios-page__empty {
+  padding: 6rem 1rem;
+
+  text-align: center;
+
+  border:
+    1px solid
+    rgba(205, 149, 76, 0.14);
+
+  background:
+    rgba(13, 10, 7, 0.5);
+}
+
+.curios-page__empty h2 {
+  margin-top: 0;
+
+  color: #ead3ad;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.curios-page__empty p {
+  margin-bottom: 0;
+
+  color:
+    rgba(226, 208, 180, 0.5);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1150px) {
+  .curios-page__grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .curios-page__grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .curios-page__hero {
+    min-height: 58vh;
+
+    padding:
+      7rem
+      1rem
+      3rem;
+  }
+
+  .curios-page__content {
+    width:
+      calc(100% - 1rem);
+  }
+
+  .curios-page__toolbar {
+    flex-direction: column;
+  }
+
+  .curios-page__count {
+    min-height: 3rem;
+  }
+
+  .curios-page__filters {
+    gap: 0.5rem;
+  }
+
+  .curios-page__filters button {
+    flex: 1;
+
+    min-width:
+      calc(50% - 0.25rem);
+  }
+
+  .curios-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .curios-page *,
+  .curios-page *::before,
+  .curios-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .curios-page__hero-image,
+  .curios-page__card-motion {
+    transform: none !important;
+    will-change: auto;
+  }
+}
